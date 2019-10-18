@@ -1,0 +1,79 @@
+{
+  "id": "1438385",
+  "name": "buy",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "307774",
+      "name": "搜索",
+      "font_class": "icon01",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "1664368",
+      "name": "下箭头",
+      "font_class": "xiajiantou",
+      "unicode": "e731",
+      "unicode_decimal": 59185
+    },
+    {
+      "icon_id": "2533623",
+      "name": "减",
+      "font_class": "jian",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "3065594",
+      "name": "星星-线",
+      "font_class": "xing",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "5109228",
+      "name": "加",
+      "font_class": "jia",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "5959937",
+      "name": "我 的",
+      "font_class": "self",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "6551476",
+      "name": "我 的",
+      "font_class": "wode",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "9357787",
+      "name": "菜单",
+      "font_class": "caidan4",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "10296829",
+      "name": "购物 车",
+      "font_class": "gouwuche",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "10527196",
+      "name": "home",
+      "font_class": "icon_home",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}
