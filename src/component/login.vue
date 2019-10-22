@@ -14,7 +14,7 @@
           <li class="boxline">
             <span class=" l-userName l-phone"></span>
             <span class="l-block">
-              <input type="text" class="l-input" placeholder="请输入您的手机号">
+              <input type="text" class="l-input" placeholder="请输入您的手机号" id="number1" v-model="msg">
             </span>
             <a href="#" class="l-clear"><img src="../assets/images/icon_06.png" alt=""></a>
           </li>
@@ -37,13 +37,13 @@
                 <input type="text" class="l-input l-input-code" placeholder="请输入d短信验证码">
               </span>
               <a href="#" class="l-clear l-clearinfo"><img src="../assets/images/icon_06.png" alt=""></a>
-              <span class="l-code l-info">
-                <a href="#">获取短信验证码</a>
+              <span class="l-code l-info" @click="show()">
+                <a href="#" id="timeshow">获取短信验证码</a>
               </span>
             </p>
           </li>
         </ol>
-        <div class="l-error">请输入6位数字验证码</div>
+        <div class="l-error " id="tishi1" v-if="showtime">请输入6位数字验证码</div>
         <p class="l-tips">温馨提示</p>
         <p class="l-rule">
           未注册我买网账号的手机号，登录时将自动注册且代表已同意
@@ -81,6 +81,43 @@
     components:{
       'v-footer':vfooter,
     },
+    data(){
+      return{
+        nums:60,
+        msg:"",
+        msg1:"",
+        showtime:false,
+      }
+    },
+    methods:{
+      show(){
+        // console.log(111)
+        var phonenum=document.getElementById("number1");
+        var time=document.getElementById("timeshow");
+        var tishi1=document.getElementById("tishi1");
+        var phoneNum=phonenum.value;
+        if(this.nums>=0&&phoneNum.length == 11 && /^[1][3,4,5,7,8][0-9]{9}$/.test(phoneNum)){
+        	// time.style="padding:0px";
+        	var _this=this;
+        	var timer
+        	timer=setInterval(function(){
+        		_this.nums--;
+        		if(_this.nums<0){
+        			time.innerHTML="重新获取"
+        			return;
+        		}else{
+        			time.innerHTML=_this.nums+"秒后重新获取";
+        		}
+        	},1000)
+          // clearInterval(timer)
+        	// time.innerHTML=this.nums+"秒后重新获取";
+        	// console.log(time.innerHTML)
+        }else{
+        	// tishi1.style="display:block";
+        	this.showtime=true;
+        }
+      },
+    }
   }
 </script>
 <style>

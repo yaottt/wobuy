@@ -487,11 +487,10 @@
   .right-icon{
     background: url('../assets/images/productdetail.png') no-repeat;
     background-size: 40px  ;
-    background-position: 0 -190px;
+    background-position: 0 -191px;
     display: inline-block;
     width: 20px;
     height: 20px;
-    border:1px solid pink;
     position: relative;
     top:4px;
   }

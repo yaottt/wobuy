@@ -55,7 +55,7 @@
       		  .then((response)=> {
       		    this.shopping=response.data.shopping;
               this.list1=response.data.list1;
-                console.log(response.data.listall);
+                // console.log(response.data.listall);
       		  })
       		  .catch(function (error) {
       		    console.log(error);

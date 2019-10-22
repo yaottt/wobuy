@@ -51,7 +51,7 @@
                      <input class="btn-group account" type="number" v-model="item.num" />
                     <span class="iconfont icon-jia increase" @click="add(item)"></span>
                   </div>
-                  <div class="buy-dele" v-if="show==false" @click="deletepro(n,m,index,item)">
+                  <div class="buy-dele" v-if="show==false" @click="deletepro(n,m,item,index)">
                     删除
                   </div>
                 </div>
@@ -134,8 +134,8 @@
       get(i){
         for(var i=0;i<this.list.length;i++){
           this.lis[i]=i;
-          console.log(i)
-          console.log(this.lis[i])
+          // console.log(i)
+          // console.log(this.lis[i])
         }
       },
       // changeProduct(event){
@@ -253,7 +253,7 @@
           if(this.allCheck){
               console.log(this.list)
               this.list.forEach( (n,m)=>{
-                  console.log(m)
+                  // console.log(m)
                   this.show1[m]=true;
                   var partsList =this.list[m].shop;
                   partsList.forEach((item,index)=>{
@@ -263,7 +263,7 @@
           }
           else{
                this.list.forEach( (n,m)=>{
-                  console.log(m)
+                  // console.log(m)
                   this.show1[m]=false;
                   var partsList =this.list[m].shop;
                   partsList.forEach((item,index)=>{
@@ -290,15 +290,13 @@
       // 删除商品
       deletepro(n,m,item,index){
         let partsArr = this.list;
-        let str=this.list[m].shop
-        // var str=this.list
-        console.log(str)
-          // let temp = [];
-          let arr= [];
+        let str=this.list[m].shop[index].id
+        // console.log(str)
+        this.list[m].shop.splice(index,1)
+          // let arr= [];
           // let storeDelist=[]
-          this.list.forEach((n,m)=>{
-
-              let storelist=this.list[m].shop;
+          // this.list.forEach((n,m)=>{
+          //     let storelist=this.list[m].shop;
               // console.log(storelist)
           //     let storeDelList =[];
               // this.list[m].shop.forEach((item,index)=>{   //店铺
@@ -307,7 +305,7 @@
 
               // })
           //     console.log(storeDelList)
-          })
+          // })
           // console.log(arr)
           // console.log('storeDelList的长度  '+storeDelList.length)
           // if(arr.length==tempArr.length){

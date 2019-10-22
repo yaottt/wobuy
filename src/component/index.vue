@@ -35,26 +35,26 @@
         <swiper-slide>
           <router-link to="/fresh"><img src="../assets/images/app-icon01.jpg" href=""></router-link>
           <router-link to="/fresh"><img src="../assets/images/app-icon02.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon03.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon04.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon05.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon06.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon07.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon08.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon09.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon10.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon03.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon04.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon05.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon06.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon07.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon08.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon09.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon10.jpg" href=""></router-link>
         </swiper-slide>
         <swiper-slide>
-          <router-link to=""><img src="../assets/images/app-icon11.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon12.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon13.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon14.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon15.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon16.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon17.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon18.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon19.jpg" href=""></router-link>
-          <router-link to=""><img src="../assets/images/app-icon20.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon11.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon12.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon13.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon14.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon15.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon16.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon17.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon18.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon19.jpg" href=""></router-link>
+          <router-link to="/fresh"><img src="../assets/images/app-icon20.jpg" href=""></router-link>
         </swiper-slide>
         <div class="swiper-pagination active" slot="pagination"></div>
       </swiper>
@@ -112,7 +112,7 @@
       </div>
     </div>
     <div class="recommend">
-      <div v-for="(k,i) in list1"><router-link to=""><img :src="k.title" alt=""></router-link></div>
+      <div v-for="(k,i) in list1"><router-link to="/details"><img :src="k.title" alt=""></router-link></div>
       <!-- <div><router-link to=""><img src="../asstes/images/recom.jpg" alt=""></router-link></div> -->
       <div v-for="(k,i) in list1[0].pic"><router-link to="/details"><img :src="k.images" alt=""></router-link></div>
     </div>
@@ -159,8 +159,8 @@
       </div>
     </transition>
     <v-footer></v-footer>
-    <a href="#" class="buycar"><img src="../assets/images/index_addcart_03.png" alt=""></a>
-    <a href="#" class="back-top" ><img src="../assets/images/top.png" alt=""></a>
+    <router-link to="/buy" class="buycar"><img src="../assets/images/index_addcart_03.png" alt=""></router-link>
+    <router-link to="" class="back-top" ><img src="../assets/images/top.png" alt=""></router-link>
   </div>
 </template>
 <script>
@@ -405,7 +405,7 @@
     background-size: 100% 100%;
     position: absolute;
     top:13px;
-    right:0px;
+    right:-2px;
   }
   .select .add{
     background-image:url('../assets/images/a_d_b_03.png');

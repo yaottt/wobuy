@@ -106,7 +106,7 @@
       		  .then((response)=> {
       		    this.text=response.data.text;
               this.content1=response.data.content1;
-                console.log(response.data.listall);
+                // console.log(response.data.listall);
       		  })
       		  .catch(function (error) {
       		    console.log(error);

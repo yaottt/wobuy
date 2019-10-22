@@ -200,6 +200,10 @@
         // this.activeIndex=this.router[i];
       },
     },
+    beforeRouteLeave(to, form, next) {
+       $(window).unbind('scroll')
+       next()
+      },
     mounted(){
       var _this=this;
       var i=0;
@@ -250,7 +254,7 @@
       },500)
       this.$http.get('./data/fresh.json')
       		  .then((response)=> {
-      		    console.log(response.data);
+      		    // console.log(response.data);
       		    // console.log(this)
       		    this.list=response.data.list;
               this.ad=response.data.ad;
@@ -290,7 +294,7 @@ body{
   }
 </style>
 <style scoped>
-  
+
   #fresh{
     padding-bottom:200px;
   }

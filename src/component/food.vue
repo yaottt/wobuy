@@ -41,7 +41,7 @@
       this.$http.get('./data/super.json')
       		  .then((response)=> {
       		    this.listall=response.data.listall;
-                console.log(response.data.listall);
+                // console.log(response.data.listall);
       		  })
       		  .catch(function (error) {
       		    console.log(error);

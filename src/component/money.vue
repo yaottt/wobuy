@@ -149,7 +149,7 @@
       		    // this.pay=response.data.pay;
               this.shop=response.data.shop;
               // this.title=response.data.title;
-              console.log(response.data.shop)
+              // console.log(response.data.shop)
       		  })
       		  .catch(function (error) {
       		    console.log(error);

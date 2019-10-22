@@ -117,7 +117,7 @@
     mounted(){
       this.$http.get('./data/store.json')
               .then((response)=> {
-                console.log(response.data.min);
+                // console.log(response.data.min);
                 this.min=response.data.min
                 this.star=response.data.star
                 this.pic=response.data.pic

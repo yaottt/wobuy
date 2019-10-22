@@ -1,7 +1,7 @@
 <template>
   <div id="super">
     <ul v-for="(n,m) in listall">
-      <li v-for="(v,i) in listall[m].list">
+      <router-link to="/details" v-for="(v,i) in listall[m].list" class="buy-li">
         <div class="top">
           <div class="pd-head" v-if="v.show=='true'"><img :src="v.pic" alt=""></div>
           <div class="pd-head" v-if="v.show=='false'"><img :src="v.pic1" alt=""></div>
@@ -11,16 +11,16 @@
             <div class="pd-center" v-if="v.show=='false'"><p>{{v.send}}</p></div>
 
           </div>
-          <router-link to=""><img :src="v.images" alt=""></router-link>
+          <router-link to="/details"><img :src="v.images" alt=""></router-link>
         </div>
         <div class="down">
           <h2>{{v.text}}</h2>
           <div class="description">
             <p>{{v.price}}</p>
-            <router-link to="" class="pd-car"><img :src="v.car" alt=""></router-link>
+            <router-link to="/buy" class="pd-car"><img :src="v.car" alt=""></router-link>
           </div>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -39,7 +39,7 @@
     mounted(){
       this.$http.get('./data/super.json')
             .then((response)=> {
-              console.log(response.data.listall);
+              // console.log(response.data.listall);
               this.listall=response.data.listall
             })
             .catch(function (error) {
@@ -59,7 +59,8 @@
     overflow: hidden;
     background-color: #eee;
   }
-  #super ul li{
+  #super .buy-li{
+    display: inline-block;
     width: 49%;
     height: 15.458937rem;
     float: left;
@@ -67,10 +68,10 @@
     margin-bottom: 0.144927rem;
     background-color: #ffffff;
   }
-  #super li:nth-of-type(2n) {
+  #super .buy-li:nth-of-type(2n) {
       margin-left: 0.144927rem;
   }
-  #super li img{
+  #super .buy-li img{
     width: 100%;
   }
   #super .top{
@@ -116,6 +117,7 @@
     font-size: 0.57971rem;
     text-align: left;
     padding: 0rem 0.483091rem;
+    color: #333;
   }
   #super .down p{
     display: inline-block;

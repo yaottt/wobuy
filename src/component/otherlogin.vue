@@ -42,7 +42,7 @@
     mehthods:{
       prev(){
       this.$router.go(-1)
-      alert(11111)
+      // alert(11111)
       },
     }
   }

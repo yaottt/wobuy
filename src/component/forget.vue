@@ -40,7 +40,7 @@
     methods:{
       get(i){
         this.index=i;
-        console.log(i)
+        // console.log(i)
         this.activeIndex=this.router[i];
       },
     }

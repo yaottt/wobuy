@@ -13,7 +13,7 @@
         <p class="r-inputbox">
           <span class="r-label">手机号：</span>
           <span class="r-inputBorder">
-            <input type="text" class="r-input r-inputH" placeholder="请输入手机号">
+            <input type="text" class="r-input r-inputH" id="number1" placeholder="请输入手机号" v-model="msg">
           </span>
         </p>
         <p class="r-inputbox">
@@ -28,20 +28,21 @@
         <p class="r-inputbox r-third">
           <span class="r-label">手机验证码：</span>
           <span class="r-inputBorder ">
-            <input type="text" class="r-input r-inputH" placeholder="请输入验证码">
+            <input type="text" class="r-input r-inputH" placeholder="请输入验证码" v-model="msg1">
           </span>
-          <span class="r-get">
-            <a href="#" class="r-btn">获取验证码</a>
+          <span class="r-get" @click="show()">
+            <a href="#" class="r-btn" id="timeshow">获取验证码</a>
           </span>
         </p>
+        <p v-if="showtime" class="tips">请输入正确的手机号</p>
         <p class="rule">
           点击下一步即代表已同意
             <a href="#">《用户服务协议》</a>
             和
             <a href="#">《我买网隐私协议》</a>
         </p>
-        <div class="next">
-          <a href="#" class="next-btn">下一步</a>
+        <div class="next" @click="btnclick()">
+          <span to="/login" href="#" class="next-btn">下一步</span >
         </div>
       </form>
     </div>
@@ -56,6 +57,61 @@
     components:{
       'v-footer':vfooter,
     },
+    data(){
+      return{
+        nums:60,
+        msg:"",
+        msg1:"",
+        showtime:false,
+      }
+    },
+    methods:{
+      show(){
+        // console.log(111)
+        var phonenum=document.getElementById("number1");
+        var time=document.getElementById("timeshow");
+        var tishi1=document.getElementById("tishi1");
+        var phoneNum=phonenum.value;
+        if(this.nums>=0&&phoneNum.length == 11 && /^[1][3,4,5,7,8][0-9]{9}$/.test(phoneNum)){
+        	// time.style="padding:0px";
+        	var _this=this;
+        	var timer
+        	timer=setInterval(function(){
+        		_this.nums--;
+        		if(_this.nums<0){
+        			time.innerHTML="重新获取"
+        			return;
+        		}else{
+        			time.innerHTML=_this.nums+"秒后重新获取";
+        		}
+        	},1000)
+        	// time.innerHTML=this.nums+"秒后重新获取";
+        	console.log(time.innerHTML)
+        }else{
+        	// tishi1.style="display:block";
+        	this.showtime=true;
+        }
+      },
+      btnclick(){
+      	var tishi1two=document.getElementById("tishi1two");
+      	var tishi1=document.getElementById("tishi1");
+      	if(this.msg.length==11&&/^[1][3,4,5,7,8][0-9]{9}$/.test(this.msg)&&this.msg1.length==6){
+      		// if(document.getElementById("checkbox").checked){
+      		// 	this.$router.push("/login")
+      		// }else{
+      		// 	this.showtime2=true;
+      		// }
+          this.$router.push("/login")
+      	}else if(this.msg1.length!=6&&this.msg.length==11&&/^[1][3,4,5,7,8][0-9]{9}$/.test(this.msg)){
+      		this.showtime1=true;
+      	}else if(this.msg.length!=11||/^[1][3,4,5,7,8][0-9]{9}$/.test(this.msg)==false&&this.msg1.length==6){
+      		this.showtime=true;
+      	}else{
+      		this.showtime=true;
+      	}
+      	// console.log("123"+this.showtime1)
+      },
+    }
   }
 </script>
 <style>
@@ -184,5 +240,9 @@
     line-height: 34px;
     background-color: #81b304;
     color: #fff;
+  }
+  .tips{
+    text-align: left;
+    color: red;
   }
 </style>
